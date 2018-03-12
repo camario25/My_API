@@ -6,6 +6,7 @@ var express = require('express'),
 // and populate the req.body object
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
+var db = require('./models');
 
 // allow cross origin requests (optional)
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
@@ -15,9 +16,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-docEndpoints = {
-  
-}
 
 /************
  * DATABASE *
