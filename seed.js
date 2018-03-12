@@ -22,7 +22,7 @@ var projectsList = [{
   github: 'https://github.com/camario25/camario25.github.io'}, 
 
   {name: "Flowing with Ruby",
-  descripiton: "A Stack Overflow clone for Ruby and Rails",
+  description: "A Stack Overflow clone for Ruby and Rails",
   url: 'https://warm-taiga-81336.herokuapp.com/',
   github: 'https://github.com/camario25/project1-flowing-with-ruby'},
 
@@ -32,7 +32,7 @@ var projectsList = [{
   github: 'https://github.com/camario25/candyCompliment'},
 
   {name: "Geoquakes",
-  descripiton: "An interactive map that shows the all earthquakes in the past week",
+  description: "An interactive map that shows the all earthquakes in the past week",
   url: 'https://camario25.github.io/Geoquakes/',
   github: 'https://github.com/camario25/Geoquakes'},
 
