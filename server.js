@@ -86,15 +86,18 @@ app.get('/api/projects', function(req, res) {
     {name: "Flowing with Ruby",
     descripiton: "A Stack Overflow clone for Ruby and Rails",
     url: 'https://warm-taiga-81336.herokuapp.com/',
-    github: 'https://github.com/camario25/project1-flowing-with-ruby',},
+    github: 'https://github.com/camario25/project1-flowing-with-ruby'},
     {name: "Candy Compliment",
     description: "Random Valentine Generator",
     url: 'n/a',
-    github: 'https://github.com/camario25/candyCompliment',},
+    github: 'https://github.com/camario25/candyCompliment'},
     {name: "Geoquakes",
     descripiton: "An interactive map that shows the all earthquakes in the past week",
     url: 'https://camario25.github.io/Geoquakes/',
-    github: 'https://github.com/camario25/Geoquakes',}
+    github: 'https://github.com/camario25/Geoquakes'},
+    {name: "Kaveh and Mario",
+    description: "A music collaboration to produce and dj in the Bay Area and beyond",
+    url: 'https://soundcloud.com/kavehandmario'}
     ]
   });
 });
