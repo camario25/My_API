@@ -40,3 +40,15 @@ var projectsList = [{
   url: 'https://soundcloud.com/kavehandmario'}
 ];
 
+db.Project.remove({}, function(err, projects) {
+  console.log('removed all projects');
+  db.Project.create(projectsList, function(err, projects) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('recreated all projects');
+    console.log('created', projects.length, 'projects');
+  });
+});
+    
