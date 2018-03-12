@@ -13,6 +13,7 @@
 //   console.log("Created new campsite", campsite._id)
 //   process.exit(); // we're all done! Exit the program.
 // })
+var db = require('./models');
 
 var projectsList = [{
   name: "Portfolio Website",
