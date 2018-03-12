@@ -15,6 +15,10 @@ app.use(function(req, res, next) {
   next();
 });
 
+docEndpoints = {
+  
+}
+
 /************
  * DATABASE *
  ************/
@@ -37,7 +41,6 @@ app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-
 /*
  * JSON API Endpoints
  */
@@ -47,18 +50,54 @@ app.get('/api', function apiIndex(req, res) {
   // It would be seriously overkill to save any of this to your database.
   // But you should change almost every line of this response.
   res.json({
-    woopsIForgotToDocumentAllMyEndpoints: true, // CHANGE ME ;)
+    woopsIForgotToDocumentAllMyEndpoints: false, // CHANGE ME ;)
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentationUrl: "https://github.com/example-username/express-personal-api/README.md", // CHANGE ME
-    baseUrl: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
+    documentationUrl: "https://github.com/camario25/My_API/blob/master/README.md", // CHANGE ME
+    baseUrl: "https://enigmatic-journey-30344.herokuapp.com/",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "Details about me"},
+      {method: "GET", path: "/api/projects", description: "Display an index of all my projects"},
+      {method: "POST", path: "/api/projects", descripiton: "Create a new project entry"},
+      {method: "PUT", path: "/api/projects", description: "Edit a previous project entry and update it"},
+      {method: "DELETE", path: "/api/projects", description: "Destroy a project entry"}
     ]
-  })
+  });
 });
 
+app.get('/api/profile', function(req, res) {
+  res.json({
+    name: "Mario Alcantar",
+    githubUsername: "camario25",
+    githubLink: 'https://github.com/camario25',
+    personalSiteLink: 'https://camario25.github.io/',
+    currentCity: 'San Francisco',
+    favoriteCuisines: ['Indian', 'Thai', 'Japanese', 'Mexican', 'American']
+  });
+});
+
+app.get('/api/projects', function(req, res) {
+  res.json({
+    projects: [{
+    name: "Portfolio Website",
+    description: "Personal webpage",
+    url: 'https://camario25.github.io/',
+    github: 'https://github.com/camario25/camario25.github.io'}, 
+    {name: "Flowing with Ruby",
+    descripiton: "A Stack Overflow clone for Ruby and Rails",
+    url: 'https://warm-taiga-81336.herokuapp.com/',
+    github: 'https://github.com/camario25/project1-flowing-with-ruby',},
+    {name: "Candy Compliment",
+    description: "Random Valentine Generator",
+    url: 'n/a',
+    github: 'https://github.com/camario25/candyCompliment',},
+    {name: "Geoquakes",
+    descripiton: "An interactive map that shows the all earthquakes in the past week",
+    url: 'https://camario25.github.io/Geoquakes/',
+    github: 'https://github.com/camario25/Geoquakes',}
+    ]
+  });
+});
 /**********
  * SERVER *
  **********/
