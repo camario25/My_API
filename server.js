@@ -74,6 +74,22 @@ app.get('/api/profile', function(req, res) {
   });
 });
 
+
+
+  
+app.get('/api/projects/search', function search(req, res) {
+  var searchTerm = req.query.q;
+  console.log(searchTerm);
+  db.Project.createIndex( { "$**": "text" } );
+  db.Project.find( { $text: { $search: searchTerm } }, function(err, searchFind) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(searchFind);
+    }
+  });
+});
+
 app.get('/api/projects', function(req, res) {
   db.Project.find({}, function(err, projects) {
     if (err) {
